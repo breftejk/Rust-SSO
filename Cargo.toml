@@ -1,0 +1,30 @@
+[package]
+name = "SSO"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies.rocket]
+version = "0.5.1"
+features = ["json", "secrets"]
+
+[dependencies.rocket_dyn_templates]
+version = "0.2.0"
+features = ["handlebars"]
+
+[dependencies.serde]
+version = "1.0.204"
+features = ["derive"]
+
+[dependencies.dotenv]
+version = "0.15.0"
+
+[dependencies.mongodb]
+version = "3.0.1"
+[dependencies]
+once_cell = "1.19.0"
+tokio = "1.38.1"
+futures = "0.3.30"
+oauth2 = "4.4.2"
+anyhow = "1.0.86"
+url = "2.5.2"
+serde_json = "1.0.120"
