@@ -1,0 +1,15 @@
+<form action="/auth/additional" method="post">
+    <input name="username" type="text" value="" />
+    <input name="email" type="text" value="" />
+    <input name="password" type="text" value="" />
+
+    {{error.bool}} {{error.message}}
+
+    {{#each session_state}}
+        {{@key}}: {{this}}
+    {{/each}}
+
+    <button type="submit">
+        Submit
+    </button>
+</form>

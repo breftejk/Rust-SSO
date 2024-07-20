@@ -1,13 +1,9 @@
 use std::str::FromStr;
 
-use dotenv::Error;
-use rocket::form::{Errors, Form};
 use rocket::get;
-use rocket::http::{CookieJar, Status};
 use rocket::serde::json::Json;
-use rocket_dyn_templates::{context, Template};
 
-use crate::errors::{ErrorResponse, http_error, HttpError};
+use crate::errors::{ErrorResponse, http_error};
 use crate::oauth2::models::client::{Client, ClientScope, get_client, get_clients};
 
 #[get("/clients")]
@@ -16,7 +12,7 @@ pub async fn index() -> Json<Vec<Client>> {
 }
 
 #[derive(FromForm)]
-struct AuthenticationRequest {
+pub struct AuthenticationRequest {
     client_id: String,
     client_secret: String,
     redirect_uri: String,
